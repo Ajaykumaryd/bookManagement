@@ -21,13 +21,18 @@ public class BookController {
 
     @GetMapping("/get-book") //google.com/search?q=yes_bank   localhost:8080//get-book?id=1
     public Book getBook(@RequestParam Integer id){    //For String= @RequestParam String q
+
         return bookData.get(id);
     }
 
     @GetMapping("/get-list-books")
     public List<Book> getBooks(){
+
         return new ArrayList<>(bookData.values());
     }
+
+
+
 
 
 }
