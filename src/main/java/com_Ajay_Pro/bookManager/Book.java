@@ -9,7 +9,7 @@ import lombok.Setter;
 public class Book {
     private Integer id;
     private String title;
-    private Integer pages ;
+    private Integer pages;
     private String author;
 
 
