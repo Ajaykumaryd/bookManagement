@@ -23,7 +23,8 @@ public class BookController {
 
 
     @GetMapping("/get-book") //google.com/search?q=yes_bank   localhost:8080//get-book?id=1
-    public Book getBook(@RequestParam Integer id){    //For String= @RequestParam String q
+    public Book getBook(@RequestParam Integer id) {    //For String= @RequestParam String q
+
         return bookData.get(id);
     }
 
@@ -50,7 +51,22 @@ public class BookController {
       book.setPages(pages);
       bookData.put(id,book);
       return book;
-     }
+    }
+
+//    @PutMapping("/update-book-page/{id}") //update-book-pages/1?pages=500
+//    public Book updatePages(@PathVariable Integer id,@RequestParam Integer pages){
+//        Book book=bookData.get(id);
+//        book.setPages(pages);
+//        bookData.put(id,book);
+//        return book;
+//    }
+
+      @DeleteMapping("delete-book/{id}")
+      public String deleteBook(@PathVariable Integer id){
+        bookData.remove(id);
+        return "deleted id is"+id;
+      }
+
 
 }
 
